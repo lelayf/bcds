@@ -2,14 +2,10 @@
 
 ## Datasets
 
-The data we work with is coming from the Parakweet organization.
+The data we work with is coming from the [Parakweet organization](https://github.com/ParakweetLabs/EmailIntentDataSet/wiki).
+See [Modelling.ipynb](notebook/Modelling.ipynb) notebook for a brief overview of it's content.
 
-#### Attributes
-
-This is super simple:
-
-1) label
-2) text
+We did not use the arff files and only use the raw text ones (designed for consumption by Weka data mining software). 
 
 # Virtual Environment
 
@@ -33,7 +29,7 @@ Now with the virtual environment we can install the dependencies written in requ
 
 # Modelling
 
-See notebook `notebook/Modelling.ipynb`. 
+See [Modelling.ipynb](notebook/Modelling.ipynb) notebook. 
 
 Since we are dealing with a binary classification problem, we will focus on accuracy, precision, recall, and F1 score as our key performance metrics.
 
