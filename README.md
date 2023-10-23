@@ -45,15 +45,21 @@ We test a number of approaches:
 - an approach based on prompt engineering and the Mistral Orca 7B model, hosted on Replicate.
 - an approach based on sentence embeddings produced by [all-mpnet-base-v2](https://replicate.com/replicate/all-mpnet-base-v2)
 
-Of all those the SVM is the best.
+Of all those the SVM is the most accurate on the test data.
 
 |Model|Accuracy|Precision|Recall|F1|
 |-----|--------|---------|------|--|
 |**SVM**|83%|80%|82%|80%|
-|SGD|77%|80%|82%|80%|
+|SGD|82%|79%|83%|80%|
 |Naive Bayes|77%|80%|82%|80%|
-|Ensemble|77%|80%|82%|80%|
-|Zero-shot|55%|80%|82%|80%|
+|Ensemble|77%|74%|77%|75%|
+|Feature Hashing|74%|70%|73%|71%|
+|Zero-shot|55%|64%|64%|55%|
+
+
+## Trade-offs 
+
+Without knowing too much about the optimization criteria for an email assistant that shippers could use, it seems opportune to optimize for the recall of emails that require a follow-up action, even if it is at the expense of lesser precision. It comes down to understanding the cost of delaying follow-up actions, in the context of a business that is extremely time-sensitive (faster shipping translates in lesser warehousing costs). It seems such costs would be an order of magnitude higher than the cost of reading an email that ends up being a false positive.
 
 
 ## Zoom on Zero-shot classification
