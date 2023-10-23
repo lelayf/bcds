@@ -56,7 +56,9 @@ Of all those the SVM is the most accurate on the test data.
 |Feature Hashing|74%|70%|73%|71%|
 |Zero-shot|55%|64%|64%|55%|
 |Embeddings+SVM|79%|76%|80%|77%|
-|Embeddings+XgBoost|79%|76%|80%|77%|
+|Embeddings+XGBoost|76%|74%|77%|74%|
+
+Things to try: it could be interesting to try few-shot prompting, or different system prompts with a different taxonomy of followup actions such as "schedule shipment", "organize meeting", "provide pricing", "provide eta" (in a BlueCargo context, that is).
 
 ## Trade-offs 
 
