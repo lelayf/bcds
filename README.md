@@ -55,7 +55,8 @@ Of all those the SVM is the most accurate on the test data.
 |Ensemble|77%|74%|77%|75%|
 |Feature Hashing|74%|70%|73%|71%|
 |Zero-shot|55%|64%|64%|55%|
-
+|Embeddings+SVM|79%|76%|80%|77%|
+|Embeddings+XgBoost|79%|76%|80%|77%|
 
 ## Trade-offs 
 
@@ -83,6 +84,14 @@ Once this is done we persist the results in file `data/mistral_predictions.pq`.
 ![mistral test2](img/mistral_screenshot_replicate.png)
 
 ![mistral test3](img/mistral_screenshot_replicate2.png)
+
+## Zoom on embeddings classification
+
+We run the scripts `notebook/embeddings_train.py` and `notebook/embeddings_test.py` to fetch embeddings of dimension 768 from the MPNet LLM hosted on Replicate. Those are then stored as parquet files, and analyzed in the `Modelling.ipynb` notebook. 
+
+We run 2 cv-searched models:
+- As before, an SVM to better assess the impact of those new features.
+- an XGBoost classifier
 
 
 # Productionize the SVM model 
@@ -130,4 +139,19 @@ A few HTTP requests have been designed for testing purpose. In a terminal, simpl
 `./test/svm_deployment.sh`
 
 ![svm test](img/svm_test.png)
+
+# ML Observability: monitoring drift
+
+This can be done at different stages of the model life cycle:
+- by logging performance metrics after every retraining, in a tracking tool such as MLFlow
+- by logging all incoming queries and predictions made
+- by running periodic distributional assessments at a frequency dictated by domain expertise. this could be implemented with a data pipeline and tools such as Monte Carlo, or Arize.ai.
+
+Typical questions to answer could be:
+- "how often are we likely to see the *nature* of topics and followup actions change over time?"
+- "is that topic drift seasonal or subject to a restricted set of regime switches? (analogy with financial markets)"
+- "are there sudden and radical economic shocks that we should adapt to? How?"
+
+
+
 
