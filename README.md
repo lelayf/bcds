@@ -31,7 +31,7 @@ Now with the virtual environment we can install the dependencies written in requ
 
 `pip install -r requirements.txt`
 
-# Exploration
+# Modelling
 
 See notebook `notebook/Modelling.ipynb`. 
 
