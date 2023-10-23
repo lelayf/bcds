@@ -5,7 +5,7 @@
 The data we work with is coming from the [Parakweet organization](https://github.com/ParakweetLabs/EmailIntentDataSet/wiki).
 See [Modelling.ipynb](notebook/Modelling.ipynb) notebook for a brief overview of it's content.
 
-We did not use the arff files and only use the raw text ones (designed for consumption by Weka data mining software). 
+We did not use the arff files (designed for consumption by Weka data mining software), and only use the raw text ones. 
 
 # Virtual Environment
 
@@ -19,6 +19,7 @@ Then proceed with the creation of a virtual environment:
 `pyenv virtualenv 3.9 bluecargo`
 
 And activate it:
+
 `pyenv activate bluecargo`
 
 # Python packages
