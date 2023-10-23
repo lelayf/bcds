@@ -86,7 +86,7 @@ Once this is done we persist the results in file `data/mistral_predictions.pq`.
 
 ## Zoom on embeddings classification
 
-We run the scripts `notebook/embeddings_train.py` and `notebook/embeddings_test.py` to fetch embeddings of dimension 768 from the MPNet LLM hosted on Replicate. Those are then stored as parquet files, and analyzed in the `Modelling.ipynb` notebook. 
+We run the scripts [embeddings_train.py](notebook/embeddings_train.py) and [embeddings_test.py](notebook/embeddings_test.py) to fetch embeddings of dimension 768 from the MPNet LLM hosted on Replicate. Those are then stored as parquet files, and analyzed in the `Modelling.ipynb` notebook. 
 
 We run 2 cv-searched models:
 - As before, an SVM to better assess the impact of those new features.
